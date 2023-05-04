@@ -119,3 +119,20 @@ for (let i = 0; i < questionSevenAnswer.length; i++) {
 }
 
 alert(`You got ${score} questions correct!`);
+
+
+let letters = ['a', 'b', 'c', 'd'];
+
+for(let attempts = 6; attempts > 0; attempts--){
+let lettersGuess = prompt("guess a letter!';")
+
+for(let i=0; i < letters.length; i++){
+ if(lettersGuess === letters[i]){
+  alert('Wow, great guess!');
+  attempts = 0;
+  break;
+ } 
+}
+
+}
+alert(`Here are four letters: ${letters}`);
