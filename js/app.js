@@ -4,18 +4,20 @@ let userName = prompt('What is your name?');
 
 alert(`Welcome to my site ${userName}! Let us play a guessing game, please answer yes/no or y/n`);
 
-let questionOneGuess = prompt('Was I born in the United States?').toLowerCase();
-
-if (questionOneGuess === 'n' || questionOneGuess === 'no') {
-  //console.log('You are correct!');
-  alert('You are correct!');
-  score++;
-} else if (questionOneGuess === 'y' || questionOneGuess === 'yes') {
-  alert('Sorry, you are incorrect.');
+function firstQuestion() {
+  let questionOneGuess = prompt('Was I born in the United States?').toLowerCase();
+  if (questionOneGuess === 'n' || questionOneGuess === 'no') {
+    //console.log('You are correct!');
+    alert('You are correct!');
+    score++;
+  } else if (questionOneGuess === 'y' || questionOneGuess === 'yes') {
+    alert('Sorry, you are incorrect.');
+  }
+  else {
+    alert('Please answer yes/no or y/n');
+  }
 }
-else {
-  alert('Please answer yes/no or y/n');
-}
+firstQuestion();
 
 let questionTwoGuess = prompt('Am I a father?').toLowerCase();
 
@@ -104,14 +106,14 @@ Q7: while (totalGuesses2 > 0) {
       alert(`That is correct!`);
       score++;
       break Q7;
-    } else if (totalGuesses2 > 0 && questionSevenGuess !== questionSevenAnswer[i]){
+    } else if (totalGuesses2 > 0 && questionSevenGuess !== questionSevenAnswer[i]) {
       prompt(`Guess again! You have ${totalGuesses2} guesses left`);
-  }
-    }
-    if (totalGuesses2 === 0) {
-      alert('Sorry, you are all out of guesses!');
     }
   }
+  if (totalGuesses2 === 0) {
+    alert('Sorry, you are all out of guesses!');
+  }
+}
 
 
 for (let i = 0; i < questionSevenAnswer.length; i++) {
