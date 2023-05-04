@@ -4,3 +4,15 @@ background-color: darkgrey;
 h1 {
   font-size: 3vw;
 }
+
+ol {
+  list-style: -moz-arabic-indic;
+  margin-left: padding-left;
+  list-style-position: inside;
+}
+
+ul {
+  list-style: -moz-arabic-indic;
+  margin-left: padding-left;
+  list-style-position: inside;
+}
