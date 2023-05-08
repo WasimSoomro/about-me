@@ -127,7 +127,7 @@ function seventhQuestion() {
 }
 
 // <<<<<<< HEAD
-// alert(`You got ${score} questions correct!`);
+alert(`You got ${score} questions correct!`);
 
 
 // let letters = ['a', 'b', 'c', 'd'];
