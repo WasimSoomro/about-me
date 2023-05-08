@@ -24,7 +24,7 @@ function secondQuestion() {
     //console.log('You are correct!');
     alert('You are correct!');
     score++;
-  } else if (questionTwoGuess === 'n' || questionOneGuess === 'no') {
+  } else if (questionTwoGuess === 'n' || questionTwoGuess === 'no') {
     alert('Sorry, you are incorrect');
   }
   else {
@@ -74,6 +74,7 @@ function fifthQuestion() {
   }
 }
 
+
 function sixthQuestion() {
   let correctGuess = 10;
   let totalGuesses = 4;
@@ -85,15 +86,18 @@ function sixthQuestion() {
     } else if (questionSixGuess > correctGuess) {
       alert(`Too high! You have ${totalGuesses} guesses left!`);
     } else {
-      alert(`Please guess a number. You just wasted a guess. You now have ${totalGuesses} guesses remaining.`);
+      alert(`Congratulations, you got it! The correct answer is ${correctGuess}.`);
+      score++;
+      break;
     }
-    questionSixGuess = prompt('Guess again!');
-  }
-  if (questionSixGuess == correctGuess) {
-    alert('Yay, nice job!');
-    score++;
+    if (totalGuesses === 0) {
+      alert(`Sorry, you didn't get it. The correct answer is ${correctGuess}.`);
+    } else {
+      questionSixGuess = prompt('Guess again!');
+    }
   }
 }
+
 
 function seventhQuestion() {
   let totalGuesses2 = 6;
@@ -122,26 +126,26 @@ function seventhQuestion() {
   alert(`You got ${score} questions correct!`);
 }
 
-<<<<<<< HEAD
-alert(`You got ${score} questions correct!`);
+// <<<<<<< HEAD
+// alert(`You got ${score} questions correct!`);
 
 
-let letters = ['a', 'b', 'c', 'd'];
+// let letters = ['a', 'b', 'c', 'd'];
 
-for(let attempts = 6; attempts > 0; attempts--){
-let lettersGuess = prompt("guess a letter!';")
+// for(let attempts = 6; attempts > 0; attempts--){
+// let lettersGuess = prompt("guess a letter!';")
 
-for(let i=0; i < letters.length; i++){
- if(lettersGuess === letters[i]){
-  alert('Wow, great guess!');
-  attempts = 0;
-  break;
- } 
-}
+// for(let i=0; i < letters.length; i++){
+//  if(lettersGuess === letters[i]){
+//   alert('Wow, great guess!');
+//   attempts = 0;
+//   break;
+//  } 
+// }
 
-}
-alert(`Here are four letters: ${letters}`);
-=======
+// }
+// alert(`Here are four letters: ${letters}`);
+
 firstQuestion();
 secondQuestion();
 thirdQuestion();
@@ -149,4 +153,4 @@ fourthQuestion();
 fifthQuestion();
 sixthQuestion();
 seventhQuestion();
->>>>>>> f09ec5259793756b1f16f6293ce3fbe9a0f6d939
+ 
