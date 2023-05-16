@@ -32,7 +32,9 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: -moz-arabic-indic;
+  margin-left: 20px;
+  list-style-position: inside;
 }
 blockquote, q {
 	quotes: none;

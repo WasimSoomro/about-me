@@ -7,7 +7,6 @@ alert(`Welcome to my site ${userName}! Let us play a guessing game, please answe
 function firstQuestion() {
   let questionOneGuess = prompt('Was I born in the United States?').toLowerCase();
   if (questionOneGuess === 'n' || questionOneGuess === 'no') {
-    //console.log('You are correct!');
     alert('You are correct!');
     score++;
   } else if (questionOneGuess === 'y' || questionOneGuess === 'yes') {
@@ -21,7 +20,6 @@ function firstQuestion() {
 function secondQuestion() {
   let questionTwoGuess = prompt('Am I a father?').toLowerCase();
   if (questionTwoGuess === 'y' || questionTwoGuess === 'yes') {
-    //console.log('You are correct!');
     alert('You are correct!');
     score++;
   } else if (questionTwoGuess === 'n' || questionTwoGuess === 'no') {
@@ -78,79 +76,48 @@ function fifthQuestion() {
 function sixthQuestion() {
   let correctGuess = 10;
   let totalGuesses = 4;
-  let questionSixGuess = prompt('Lets play a game, guess my favorite number!');
-  while (questionSixGuess != correctGuess && totalGuesses > 0) {
-    totalGuesses--;
+  let questionSixGuess;
+
+  for (let i = 0; i < totalGuesses; i++) {
+    questionSixGuess = prompt('Lets play a game, guess my favorite number!');
     if (questionSixGuess < correctGuess) {
-      alert(`Too low! You have ${totalGuesses} guesses left!`);
+      alert(`Too low! You have ${totalGuesses - i - 1} guesses left!`);
     } else if (questionSixGuess > correctGuess) {
-      alert(`Too high! You have ${totalGuesses} guesses left!`);
+      alert(`Too high! You have ${totalGuesses - i - 1} guesses left!`);
     } else {
       alert(`Congratulations, you got it! The correct answer is ${correctGuess}.`);
       score++;
-      break;
+      return;
     }
-    if (totalGuesses === 0) {
-      alert(`Sorry, you didn't get it. The correct answer is ${correctGuess}.`);
-    } else {
-      questionSixGuess = prompt('Guess again!');
-    }
+    alert(`Sorry, you didn't get it. The correct answer is ${correctGuess}.`);
   }
+
+  function seventhQuestion() {
+    let totalGuesses = 6;
+    let questionSevenAnswer = ['kale', 'spinach', 'microgreens', 'collard', 'arugula', 'cabbage', 'bok choy'];
+    let questionSevenGuess;
+
+    while (totalGuesses > 0) {
+      questionSevenGuess = prompt('Can you name a leafy green I like to eat?').toLowerCase();
+      totalGuesses--;
+if (questionSevenAnswer.includes(questionSevenGuess)){
+  alert('That is correct!');
+  score++
+  return+
+} else if (totalGuesses > 0) {
+  alert(`Guess again! You have ${totalGuesses} guesses left.`);
 }
+alert('Sorry, you are all out of guesses! The possible answers were: ${questionSevenAnswer.join(', ')}');
+}
+alert(`You got ${score} questions correct out of 7!`);
 
 
-function seventhQuestion() {
-  let totalGuesses2 = 6;
-  let questionSevenAnswer = ['kale', 'spinach', 'microgreens', 'collard', 'arugula', 'cabbage', 'bok choy'];
-  let questionSevenGuess;
-  Q7: while (totalGuesses2 > 0) {
-    questionSevenGuess = prompt('Can you name a leafy green I like to eat?').toLowerCase();
-    totalGuesses2--;
+  firstQuestion();
+  secondQuestion();
+  thirdQuestion();
+  fourthQuestion();
+  fifthQuestion();
+  sixthQuestion();
+  seventhQuestion();
 
-    for (let i = 0; i < questionSevenAnswer.length; i++) {
-      if (questionSevenGuess === questionSevenAnswer[i]) {
-        alert(`That is correct!`);
-        score++;
-        break Q7;
-      } else if (totalGuesses2 > 0 && questionSevenGuess !== questionSevenAnswer[i]) {
-        prompt(`Guess again! You have ${totalGuesses2} guesses left`);
-      }
-    }
-    if (totalGuesses2 === 0) {
-      alert('Sorry, you are all out of guesses!');
-    }
-  }
-  for (let i = 0; i < questionSevenAnswer.length; i++) {
-    alert(`Here were the possible answers ${questionSevenAnswer[i]}`);
-  }
   alert(`You got ${score} questions correct!`);
-}
-
-// <<<<<<< HEAD
-alert(`You got ${score} questions correct!`);
-
-
-// let letters = ['a', 'b', 'c', 'd'];
-
-// for(let attempts = 6; attempts > 0; attempts--){
-// let lettersGuess = prompt("guess a letter!';")
-
-// for(let i=0; i < letters.length; i++){
-//  if(lettersGuess === letters[i]){
-//   alert('Wow, great guess!');
-//   attempts = 0;
-//   break;
-//  } 
-// }
-
-// }
-// alert(`Here are four letters: ${letters}`);
-
-firstQuestion();
-secondQuestion();
-thirdQuestion();
-fourthQuestion();
-fifthQuestion();
-sixthQuestion();
-seventhQuestion();
- 

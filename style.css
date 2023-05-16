@@ -7,12 +7,12 @@ h1 {
 
 ol {
   list-style: -moz-arabic-indic;
-  margin-left: padding-left;
+  margin-left: 20px;
   list-style-position: inside;
 }
 
 ul {
-  list-style: -moz-arabic-indic;
-  margin-left: padding-left;
+  list-style: disc;
+  margin-left: 20px;
   list-style-position: inside;
 }
